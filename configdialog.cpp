@@ -23,6 +23,7 @@ along with ssMon.  If not, see <http://www.gnu.org/licenses/>.
 #include "config.h"
 #include <QString>
 #include <QFileDialog>
+#include <mainwindow.h>
 
 configDialog::configDialog(QWidget *parent) :
     QDialog(parent),

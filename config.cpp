@@ -20,13 +20,15 @@ along with ssMon.  If not, see <http://www.gnu.org/licenses/>.
 
 #include <QSettings>
 #include <QDir>
-#include <config.h>
 #include <QString>
+#include <config.h>
+
 #define SSMTRIGGER "ssmTrigger"
 #define SSMTHRESHOLD "ssmThreshold"
 #define SSMTCP "ssmTCP"
 #define SSMLOGPATH "ssmLogPath"
 #define SSMLOGENABLE "ssmLogEnable"
+#define SSMDEVICE "ssmLastDevice"
 
 ssMonConfig::ssMonConfig()
 {
@@ -41,15 +43,19 @@ ssmconfig ssMonConfig::getConfig(ssmconfig s)
     s.ssmTCP =(settings.value(SSMTCP, 50001)).toString().toUShort();
     s.logPath =(settings.value(SSMLOGPATH, (QDir::homePath()))).toString();
     s.ssmEnabledLog =(settings.value(SSMLOGENABLE, false)).toBool();
+    s.lastDevice = (settings.value(SSMDEVICE, "").toString());
     return s;
 }
 
 void ssMonConfig::saveConfig(ssmconfig s)
 {
-    QSettings settings;
-    settings.setValue(SSMTRIGGER, s.ssmTrigger);
-    settings.setValue(SSMTHRESHOLD, s.ssmThreshold);
-    settings.setValue(SSMTCP, s.ssmTCP);
-    settings.setValue(SSMLOGPATH, s.logPath);
-    settings.setValue(SSMLOGENABLE, s.ssmEnabledLog);
+    QSettings msettings;
+
+    msettings.setValue(SSMDEVICE, s.lastDevice);
+    msettings.setValue(SSMTRIGGER, s.ssmTrigger);
+    msettings.setValue(SSMTHRESHOLD, s.ssmThreshold);
+    msettings.setValue(SSMTCP, s.ssmTCP);
+    msettings.setValue(SSMLOGPATH, s.logPath);
+    msettings.setValue(SSMLOGENABLE, s.ssmEnabledLog);
+
 }

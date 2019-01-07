@@ -49,6 +49,7 @@ private:
     void adaptSettings();
     void saveSettings();
     void cleanUp();
+    QString whichDevice();
 
 
 
@@ -82,8 +83,6 @@ private:
   Ui::MainWindow *ui;
   ssMonDevice devThread;
   ssMonServer pServer;
-
-//  piConnection piCon;
   logFile logger;
   bool portOpen = false;
   bool piConnected = false;

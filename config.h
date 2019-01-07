@@ -29,6 +29,7 @@ struct ssmconfig
     quint16 ssmTCP;
     bool ssmEnabledLog;
     QString logPath;
+    QString lastDevice;
 };
 
 class ssMonConfig

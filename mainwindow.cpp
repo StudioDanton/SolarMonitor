@@ -90,6 +90,10 @@ void MainWindow::cleanUp()
 
 }
 
+QString MainWindow::whichDevice()
+{
+    return ui->deviceSelector->currentText();
+}
 void MainWindow::setupRealtimeLoop(QCustomPlot *customPlot)
 {
 
@@ -246,6 +250,12 @@ void MainWindow::fillDevices()
     for(i = Devices.begin(); i != Devices.end(); i++)
        ui->deviceSelector->addItem ((*i).portName().toStdString().data());
     ui->deviceSelector->addItem("Simulator");
+    for (int d = 0; d < ui->deviceSelector->count(); d++)
+        if (ui->deviceSelector->itemText(d) == ssmonConfigs.lastDevice) {
+            ui->deviceSelector->setCurrentIndex(d);
+            break;
+        }
+
 }
 
 void MainWindow::fillbaudRates()
@@ -370,6 +380,7 @@ void MainWindow::adaptSettings() {
 void MainWindow::saveSettings()
 {
     ssMonConfig cf;
+    ssmonConfigs.lastDevice = whichDevice();
     cf.saveConfig(ssmonConfigs);
 }
 
