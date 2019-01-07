@@ -37,6 +37,7 @@ along with ssMon.  If not, see <http://www.gnu.org/licenses/>.
 #include <QDateTimeEdit>
 #include <ssmonserver.h>
 
+
 #define ABORT true
 
 MainWindow::MainWindow(QWidget *parent) :
@@ -79,8 +80,9 @@ MainWindow::~MainWindow()
 
 void MainWindow::cleanUp()
 {
-    pServer.endserver();
     if (devThread.isRunning()) devThread.terminate();
+    pServer.sendCommand("#DISCONNECT$\n");
+    pServer.endserver();
 
     QTime dieTime= QTime::currentTime().addSecs(1);
      while (QTime::currentTime() < dieTime)
@@ -152,7 +154,7 @@ void MainWindow::on_seeingReceived(double seeing)
     long long key = mSecs/1000;
 
     char tmp[10];
-    if (pServer.isConnected())
+    if (pServer.isConnected() && portOpen)
     {
        if (seeing < ssmonConfigs.ssmTrigger && seeing > 0.0)
        {
@@ -215,7 +217,7 @@ void MainWindow::on_inputReceived(double input)
     long long key=QDateTime::currentMSecsSinceEpoch()/1000;
 
     char tmp[10];
-    if (pServer.isConnected())
+    if (pServer.isConnected() && portOpen)
             pServer.sendCommand(QString ("#IV$%1\n").arg(input));
 
     std::sprintf(tmp, "%6.2f V", input);
@@ -257,8 +259,10 @@ void MainWindow::on_pushButton_clicked()
     if (portOpen)
     {
         devThread.stop();
+
         ui->pushButton->setText("Connect");
         ui->actionConnect->setChecked(false);
+        pServer.sendCommand("#DISCONNECT$\n");
         if (pLogging)
         {
             logger.saveLog();

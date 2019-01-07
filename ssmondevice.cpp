@@ -100,7 +100,7 @@ void ssMonDevice::run()
             }
         }
         if (!isSimulator) serial.clear();
-        else srand ((unsigned)time(NULL));
+        else srand ((unsigned)time(nullptr));
 
         while (!breakloop)
         {
