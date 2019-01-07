@@ -10,21 +10,8 @@ A special plugin for FireCapture is part of the project.
 
 **Dependencies:**
 
-Qt5
-VS-2017 C++ Runtime (vc-redist64.exe)
-
-Linux
-
-To get access to the serial port, when the Arduino is connected, the user should be added to the dialout group.
-
-*Windows*
-
-
-
-*Max-OSX*
-
-not tested or ported yet 
-
+Qt5.11
+A Solar Scintillation Monitor Device (or only simulation mode is possible)
 
 **Disclaimer**
 
