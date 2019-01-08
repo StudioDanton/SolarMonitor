@@ -293,6 +293,7 @@ void MainWindow::on_pushButton_clicked()
             ui->pushButton->setText("Disconnect");
             ui->actionConnect->setChecked(true);
             devThread.connectDevice( ui->deviceSelector->currentText(), 2000, ui->baudRate->currentText().toInt());
+            ssmonConfigs.lastDevice = ui->deviceSelector->currentText();
             portOpen = true;
             if (ssmonConfigs.ssmEnabledLog)
             {
