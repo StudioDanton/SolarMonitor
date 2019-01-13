@@ -230,7 +230,7 @@ void MainWindow::on_inputReceived(double input)
 
     if (input <= 0.0)   ui->meterInput->setStyleSheet( "background-color: "
                     "qlineargradient(x1: 0, x2: 1, stop: 0 white)");
-    else if (input <= 0.59) ui->meterInput->setStyleSheet( "background-color: "
+    else if (input <= 0.49) ui->meterInput->setStyleSheet( "background-color: "
                    "qlineargradient(x1: 0, x2: 1, stop: 0 red, stop: 0.4 white)");
     else if (input <= 0.99) ui->meterInput->setStyleSheet( QString ("background-color: "
                    "qlineargradient(x1: 0, x2: 1, stop: 0 red, stop: 0.4 green, stop: %1 white)").arg(input - .1));
