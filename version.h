@@ -20,8 +20,8 @@ along with ssMon.  If not, see <http://www.gnu.org/licenses/>.
 
 #ifndef VERSION_H
 #define MAJOR_VERSION "01"
-#define MINOR_VERSION "01"
-#define PATCH_VERSION "02"
+#define MINOR_VERSION "02"
+#define PATCH_VERSION "01"
 #define P_NAME "Solar Scintillation Seeing Monitor"
 #define P_AUTHOR "paul-db"
 #define P_INFO \

@@ -10,6 +10,8 @@ greaterThan(QT_MAJOR_VERSION, 4): QT += widgets network serialport printsupport
 
 TARGET = SolarMonitor
 TEMPLATE = app
+RC_FILE = SolarMonitor.rc
+ICON = SolarMonitor.icns
 
 # The following define makes your compiler emit warnings if you use
 # any feature of Qt which has been marked as deprecated (the exact warnings
@@ -65,4 +67,6 @@ DISTFILES += \
     README.md \
     LICENSE \
     resources/reload.png \
-    resources/sun.png
+    resources/sun.png \
+    SolarMonitor.ico \
+    SolarMonitor.icns

@@ -2,5 +2,6 @@
     <qresource prefix="/new/prefix1">
         <file>resources/reload.png</file>
         <file>resources/sun.png</file>
+        <file>resources/Sun-icon.png</file>
     </qresource>
 </RCC>
