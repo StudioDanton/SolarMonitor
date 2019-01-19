@@ -335,7 +335,7 @@ void MainWindow::on_actionAbout_Qt_triggered()
 void MainWindow::on_actionAbout_ssMon_triggered()
 {
    QString Title = QString("%1 - Version: A-%2.%3.%4").arg(P_NAME).arg(MAJOR_VERSION).arg(MINOR_VERSION).arg(PATCH_VERSION);
-   QString Text = QString("(C) 2017 - %1\n %2").arg(P_AUTHOR).arg(P_INFO);
+   QString Text = QString("(C) 2019 - %1\n %2").arg(P_AUTHOR).arg(P_INFO);
 
     QMessageBox::about(this, Title, Text);
 }

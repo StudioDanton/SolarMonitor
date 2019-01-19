@@ -33,9 +33,9 @@
    <widget class="QPushButton" name="pushButton">
     <property name="geometry">
      <rect>
-      <x>120</x>
+      <x>108</x>
       <y>20</y>
-      <width>89</width>
+      <width>101</width>
       <height>25</height>
      </rect>
     </property>
@@ -146,7 +146,7 @@
      <rect>
       <x>210</x>
       <y>20</y>
-      <width>131</width>
+      <width>151</width>
       <height>25</height>
      </rect>
     </property>
@@ -156,7 +156,7 @@
      <rect>
       <x>210</x>
       <y>50</y>
-      <width>131</width>
+      <width>151</width>
       <height>25</height>
      </rect>
     </property>
@@ -206,7 +206,7 @@
    <widget class="QPushButton" name="refreshPorts">
     <property name="geometry">
      <rect>
-      <x>340</x>
+      <x>360</x>
       <y>20</y>
       <width>25</width>
       <height>25</height>
@@ -435,7 +435,7 @@
   </action>
   <action name="actionAbout_ssMon">
    <property name="text">
-    <string>About ssMon</string>
+    <string>About SolarMonitor</string>
    </property>
   </action>
   <action name="actionAbout_Qt">
