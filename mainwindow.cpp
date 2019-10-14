@@ -36,6 +36,7 @@ along with ssMon.  If not, see <http://www.gnu.org/licenses/>.
 #include <QDateTime>
 #include <QDateTimeEdit>
 #include <ssmonserver.h>
+
 #include <sys/stat.h>
 
 
@@ -246,6 +247,11 @@ void MainWindow::on_inputReceived(double input)
 void MainWindow::fillDevices()
 {
     ui->deviceSelector->clear();
+#ifdef __linux__
+    struct stat sbuf;
+    if (!stat("/dev/ssm"), & sbuf)
+        ui->deviceSelector->addItem("ssm");
+#endif
     QList<QSerialPortInfo> Devices = QSerialPortInfo::availablePorts();
     QList<QSerialPortInfo>::iterator i;
     for(i = Devices.begin(); i != Devices.end(); i++)
