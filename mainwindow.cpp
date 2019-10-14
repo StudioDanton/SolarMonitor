@@ -36,6 +36,7 @@ along with ssMon.  If not, see <http://www.gnu.org/licenses/>.
 #include <QDateTime>
 #include <QDateTimeEdit>
 #include <ssmonserver.h>
+#include <sys/stat.h>
 
 
 #define ABORT true
